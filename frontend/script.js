@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000'; // Change this when deployed
+const API_URL = ''; // Use relative paths for deployed and local
 
 const urlInput = document.getElementById('urlInput');
 const shortenBtn = document.getElementById('shortenBtn');
