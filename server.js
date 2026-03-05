@@ -5,9 +5,11 @@ const cors = require("cors");
 const urlRoutes = require("./routes/urlRoutes");
 
 const app = express();
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "frontend")));
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
@@ -28,7 +30,7 @@ mongoose
   });
 
 app.get("/", (req, res) => {
-  res.send("✅ URL Shortener API Running");
+  res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 
 app.use("/", urlRoutes);
