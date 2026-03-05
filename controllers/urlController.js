@@ -21,9 +21,13 @@ exports.createShortUrl = async (req, res, next) => {
       await redisClient.set(shortCode, url, { EX: 86400 });
     }
 
+    const protocol = req.protocol;
+    const host = req.get('host');
+    const baseUrl = `${protocol}://${host}`;
+
     res.status(201).json({
       originalUrl: url,
-      shortUrl: `http://localhost:5000/${shortCode}`,
+      shortUrl: `${baseUrl}/${shortCode}`,
       shortCode
     });
   } catch (err) {
