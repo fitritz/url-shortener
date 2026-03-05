@@ -2,7 +2,13 @@
 
 A simple and efficient URL shortening service built with Node.js, Express, MongoDB, and Redis caching.
 
-## 📋 Features
+## � Live Demo
+
+**[Try it now →](https://url-shortener-4ovz.onrender.com/)**
+
+---
+
+## �📋 Features
 
 - **Shorten URLs** - Convert long URLs into short, shareable links
 - **Click Tracking** - Track the number of times each shortened URL is accessed
